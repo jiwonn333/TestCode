@@ -12,7 +12,14 @@ public class CodilityTestCode {
     public void testCode() {
         System.out.println("binary_gap : " + binaryGap(8806));
         System.out.println("cyclic_rotation : " + Arrays.toString(cyclicRotation(new int[]{1, 2, 3, 4}, 2)));
-        System.out.println("oddOccurrencesInArray : " + oddOccurrencesInArray(new int[]{9,3,9,3,9,7,9}));
+        System.out.println("oddOccurrencesInArray : " + oddOccurrencesInArray(new int[]{9, 3, 9, 3, 9, 7, 9}));
+        System.out.println("frogJump : " + frogJump(10, 85, 30));
+    }
+
+    public int frogJump(int X, int Y, int D) {
+        int destination = Y - X;
+        int jumps = destination % D > 0 ? destination / D + 1 : destination / D;
+        return jumps;
     }
 
 
