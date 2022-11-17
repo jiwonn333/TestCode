@@ -11,15 +11,25 @@ public class CodilityTestCode {
     @Test
     public void testCode() {
         System.out.println("binary_gap : " + binaryGap(8806));
-        System.out.println("cyclic_rotation : " + Arrays.toString(cyclicRotation(new int[]{1,2,3,4}, 2)));
+        System.out.println("cyclic_rotation : " + Arrays.toString(cyclicRotation(new int[]{1, 2, 3, 4}, 2)));
+        System.out.println("oddOccurrencesInArray : " + oddOccurrencesInArray(new int[]{9,3,9,3,9,7,9}));
     }
 
 
-        public int[] cyclicRotation(int[] A, int k) {
+    public int oddOccurrencesInArray(int[] A) {
+        // 비트연산활용
+        int single = 0;
+        for (int i = 0; i < A.length; i++) {
+            single = single ^ A[i];
+        }
+        return single;
+    }
+
+    public int[] cyclicRotation(int[] A, int k) {
         int length = A.length;
         int temp;
         if (length == 0) {
-           return A;
+            return A;
         }
         for (int i = 0; i < k; i++) {
             temp = A[length - 1];
@@ -30,7 +40,7 @@ public class CodilityTestCode {
         }
         return A;
     }
-    
+
     // cyclicRotation Queue 사용하여 풀이....-> 반환타입을 변경해야 함
     public void test() {
         Queue<Integer> queue = new LinkedList<>();
